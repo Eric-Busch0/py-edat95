@@ -1,5 +1,5 @@
 import argparse
-from emb_edat import Edat95
+from edat95 import Edat95
 
 
 def main():
