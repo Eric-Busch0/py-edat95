@@ -5,7 +5,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 brew install pipx
 pipx install --upgrade build 
 python3 -m build
-pipx install dist/*.whl --force-reinstall
+pipx reintstall dist/*.whl
 set +e
 else
 pip3 install --upgrade build 
