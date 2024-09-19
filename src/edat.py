@@ -1,5 +1,5 @@
 import argparse
-from emb_edat import EmbEdat
+from emb_edat import Edat95
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
     parser.add_argument("--set-loss", default=0, help="Set current attenuation")
 
 
-    dat = EmbEdat()
+    dat = Edat95()
 
     args = parser.parse_args()
 

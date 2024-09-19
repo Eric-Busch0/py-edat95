@@ -1,0 +1,1 @@
+from .emb_edat  import Edat95

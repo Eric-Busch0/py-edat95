@@ -31,7 +31,7 @@ class CmdStatusError(Exception):
     pass
 
 
-class EmbEdat:
+class Edat95:
     """EMB Electronic Digital Attenuator"""
 
     VID = 0x483
