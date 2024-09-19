@@ -1,0 +1,26 @@
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project]
+name = "emb_edat95"
+version = "1.0.0"
+dependencies = [ "hidapi"]
+requires-python = ">=3.8"
+description = "Software tooling for use of the EMB EDAT95"
+readme = "README.md"
+
+[project.license]
+file = "LICENSE"
+
+[project.scripts]
+edat = "edat_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Analog-Devices-MSDK/BLE-HCI"
+Repository = "https://github.com/Analog-Devices-MSDK/BLE-HCI"
+Documentation = "https://analog-devices-msdk.github.io/MAX-BLE-HCI/"
+"Bug Tracker" = "https://github.com/Analog-Devices-MSDK/BLE-HCI/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = [ "src/max_ble_hci", "src/max_ble_hci_cli.py", "src/hci_decode.py",]
