@@ -23,4 +23,4 @@ Documentation = "https://github.com/Eric-Busch0/py-edat95"
 "Bug Tracker" = "https://github.com/Eric-Busch0/py-edat95/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = [ "src/max_ble_hci", "src/max_ble_hci_cli.py", "src/hci_decode.py",]
+packages = [ "src/edat95"]
