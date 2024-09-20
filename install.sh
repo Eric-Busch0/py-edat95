@@ -3,8 +3,11 @@
 set -e
 if [[ $OSTYPE == 'darwin'* ]]; then
 
+set +e
 brew install pipx
 pipx install  build 
+set -e
+
 python3 -m build
 pipx reintstall dist/*.whl
 set +e
