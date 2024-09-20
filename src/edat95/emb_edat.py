@@ -101,8 +101,6 @@ class Edat95:
         Raises:
             ValueError: If attenuation not within 0 - 95 dB
 
-        Returns:
-            _type_: _description_
         """
 
         if attenuation > 95:
@@ -112,13 +110,31 @@ class Edat95:
 
         self._write(CommandOption.SET_ATTENUATION, data)
 
-    def set_insertion_loss(self, loss, store_non_volatile=False) -> int:
+    def set_insertion_loss(self, loss, store_non_volatile=False):
+        """Set insertion loss determined via calibration
+
+        Args:
+            loss (int): insertion loss in dB
+            store_non_volatile (bool, optional): True if data should be stored in non volatile memory. 
+            Defaults to False.
+
+        Raises:
+            ValueError: if insertion loss cannot be represented within a byte
+        
+
+        NOTE: To limit flash erase cycles. Use the non volatile option to test the loss before storing to NVM
+        """
 
         if loss < 0 or loss > 255:
             raise ValueError("Loss is a positive value between 0 and 255")
 
         self._write(CommandOption.SET_INSERTION_LOSS, [loss, int(store_non_volatile)])
 
-    def get_insertion_loss(self, data) -> int:
+    def get_insertion_loss(self) -> int:
+        """Get stored insertion loss
+
+        Returns:
+            int: insertion loss in dB
+        """
         resp = self._write(CommandOption.GET_INSERTION_LOSS)
         return resp[0]
