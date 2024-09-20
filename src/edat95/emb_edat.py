@@ -96,10 +96,10 @@ class Edat95:
         """Set attenuation
 
         Args:
-            attenuation (float): attenuation in dB (0 - 31.5)
+            attenuation (float): attenuation in dB (0 - 95)
 
         Raises:
-            ValueError: If attenuation not within 0 - 31.5 dB
+            ValueError: If attenuation not within 0 - 95 dB
 
         Returns:
             _type_: _description_
